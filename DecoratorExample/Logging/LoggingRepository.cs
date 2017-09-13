@@ -17,11 +17,11 @@ namespace DecoratorExample.Logging
 
         public List<string> GetAllCustomers()
         {
-            _logger.Log($"{DateTime.Now.ToString("dd.MM.yyyy HH:mm:ss")}: Start Load Customers.");
+            _logger.Log($"{DateTime.Now.ToString("dd.MM.yyyy HH:mm:ss.fff")}: Start Load Customers.");
 
             var result = _baseRepository.GetAllCustomers();
 
-            _logger.Log($"{DateTime.Now.ToString("dd.MM.yyyy HH:mm:ss")}: Loading completed.");
+            _logger.Log($"{DateTime.Now.ToString("dd.MM.yyyy HH:mm:ss.fff")}: Loading completed.");
 
             return result;
         }
