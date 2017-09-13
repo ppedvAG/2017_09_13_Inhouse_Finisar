@@ -9,7 +9,7 @@ namespace BuilderExample
             AnzahlTüren = anzahlTüren;
         }
 
-        public int AnzahlTüren { get; private set; }
+        public int AnzahlTüren { get; }
         public Oberfläche Oberfläche { get; private set; }
         public Farbe Farbe { get; private set; }
         public int AnzahlBöden { get; private set; }

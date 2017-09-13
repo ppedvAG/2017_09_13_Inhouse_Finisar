@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="CompositeExample.Aufgabe">
+    <Position X="1.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAABAAAAAAAgACAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Aufgabe.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="CompositeExample.AufgabenListe">
+    <Position X="2.75" Y="3.5" Width="1.5" />
+    <AssociationLine Name="_aufgaben" Type="CompositeExample.Aufgabe" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="4.25" Y="4.625" />
+        <Point X="4.625" Y="4.625" />
+        <Point X="4.625" Y="1.5" />
+        <Point X="3.25" Y="1.5" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAABAAAAAAAEACAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AufgabenListe.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="_aufgaben" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="CompositeExample.Einzelaufgabe">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEBAAAAAAAAACAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Einzelaufgabe.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="10" />
+</ClassDiagram>
