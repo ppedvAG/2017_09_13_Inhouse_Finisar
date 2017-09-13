@@ -15,6 +15,5 @@ namespace SingeltonExample
         }
 
         public void Dispose() => throw new NotImplementedException();
-        }
     }
 }
