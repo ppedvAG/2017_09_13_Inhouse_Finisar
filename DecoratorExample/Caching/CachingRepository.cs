@@ -4,25 +4,22 @@ using System;
 
 namespace DecoratorExample.Caching
 {
-    public class CachingRepository : IRepository
+    public class CachingRepository : RepositoryDecorator
     {
-        private readonly IRepository _baseRepository;
-
         private DateTime lastLoadedTime;
         private List<string> _cachedCustomers;
 
         public CachingRepository(IRepository baseRepository)
-        {
-            _baseRepository = baseRepository;
-        }
+            : base(baseRepository)
+        { }
 
-        public List<string> GetAllCustomers()
+        public override List<string> GetAllCustomers()
         {
             var shouldReloadData = (DateTime.Now - lastLoadedTime).TotalSeconds >= 60;
 
-            if(_cachedCustomers == null || shouldReloadData)
+            if (_cachedCustomers == null || shouldReloadData)
             {
-                _cachedCustomers = _baseRepository.GetAllCustomers();
+                _cachedCustomers = base.GetAllCustomers();
                 lastLoadedTime = DateTime.Now;
             }
 

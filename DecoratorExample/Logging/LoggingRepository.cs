@@ -4,24 +4,27 @@ using System;
 
 namespace DecoratorExample.Logging
 {
-    public class LoggingRepository : IRepository
+    public class LoggingRepository : RepositoryDecorator
     {
-        private readonly IRepository _baseRepository;
         private readonly ILogger _logger;
 
         public LoggingRepository(IRepository baseRepository, ILogger logger)
+            : base(baseRepository)
         {
-            _baseRepository = baseRepository;
             _logger = logger;
         }
 
-        public List<string> GetAllCustomers()
+        public override List<string> GetAllCustomers()
         {
             _logger.Log($"{DateTime.Now.ToString("dd.MM.yyyy HH:mm:ss.fff")}: Start Load Customers.");
 
-            var result = _baseRepository.GetAllCustomers();
+            var result = base.GetAllCustomers();
 
             _logger.Log($"{DateTime.Now.ToString("dd.MM.yyyy HH:mm:ss.fff")}: Loading completed.");
+            foreach (var item in result)
+            {
+                _logger.Log($"\t{item}");
+            }
 
             return result;
         }

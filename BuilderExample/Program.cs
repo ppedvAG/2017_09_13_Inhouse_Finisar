@@ -10,8 +10,8 @@ namespace BuilderExample
     {
         static void Main(string[] args)
         {
-            var builder = new Schrank.Builder(anzahlTüren: 4);
-            builder.MitOberfläche(Oberfläche.Gewachst)
+            var builder = new Schrank.Builder(anzahlTüren: 4)
+                .MitOberfläche(Oberfläche.Gewachst)
                 .InFarbe(Farbe.KeineFarbe)
                 .MitKleiderstange();
             

@@ -16,5 +16,10 @@ namespace DecoratorExample.Data
                 "Stanislaus"
             };
         }
+
+        public string GetById(int id)
+        {
+            return "Hermann";
+        }
     }
 }

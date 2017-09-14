@@ -20,14 +20,14 @@ namespace DecoratorExample
 
                 c.For<ILogger>().Use<ConsoleLogger>();
             });
+            //var vm = container.GetInstance<ViewModel>();
 
-            //var repository = new Repository();
-            //var logger = new ConsoleLogger();
-            //var loggingRepository = new LoggingRepository(repository, logger);
-            //var cachingRepository = new CachingRepository(loggingRepository);
-            //var vm = new ViewModel(cachingRepository);
+            var logger = new ConsoleLogger();
+            IRepository repository = new Repository();
+            repository = new LoggingRepository(repository, logger);
+            repository = new CachingRepository(repository);
+            var vm = new ViewModel(repository);
 
-            var vm = container.GetInstance<ViewModel>();
 
             while (true)
             {
