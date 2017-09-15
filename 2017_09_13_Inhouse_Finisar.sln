@@ -33,6 +33,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Hardware", "Hardware", "{4B
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hardware.Simulate", "Hardware.Simulate\Hardware.Simulate.csproj", "{EEE8374E-0200-46DA-BAF2-555782C9181A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HalloMVVMLight", "HalloMVVMLight\HalloMVVMLight.csproj", "{8903B209-0AE4-41AA-80DF-3B159AF4E196}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -83,6 +85,10 @@ Global
 		{EEE8374E-0200-46DA-BAF2-555782C9181A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EEE8374E-0200-46DA-BAF2-555782C9181A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EEE8374E-0200-46DA-BAF2-555782C9181A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8903B209-0AE4-41AA-80DF-3B159AF4E196}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8903B209-0AE4-41AA-80DF-3B159AF4E196}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8903B209-0AE4-41AA-80DF-3B159AF4E196}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8903B209-0AE4-41AA-80DF-3B159AF4E196}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
