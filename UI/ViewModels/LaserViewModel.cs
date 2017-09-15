@@ -15,7 +15,5 @@ namespace UI.ViewModels
                 RaisePropertyChanged();
             }
         }
-
-
     }
 }

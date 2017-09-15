@@ -72,5 +72,34 @@ namespace UI.ViewModels
 
             Devices = new ObservableCollection<ObservableDevice>(devices);
         }
+
+
+        //public DeviceCenterViewModel(
+        //    IDeviceManager deviceManager,
+        //    IDialogService dialogService,
+        //    ILogic calculator,
+        //    LaserViewModel laserViewModel)
+        //{
+        //    _deviceManager = deviceManager;
+        //    _dialogService = dialogService;
+        //    _icalculator = caluclator;
+
+        //    _laserViewModel = laserViewModel;
+        //}
+        //private void Measure()
+        //{
+        //    var werte = SMUColelction.Select(s => s.Measure());
+        //    var neueWerte = _logik.Berechne(werte);     //ILogic
+        //}
+
+        // IN Logik Ebene
+        //public class Logic : ILogic
+        //{
+        //    public Logic(ICalculaor calculator)
+        //    {
+
+        //    }
+
+        //}
     }
 }

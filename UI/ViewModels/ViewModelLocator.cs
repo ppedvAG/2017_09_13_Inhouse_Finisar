@@ -1,29 +1,21 @@
-﻿using Hardware.Simulate;
-using UI.Services;
+﻿using StructureMap;
 
 namespace UI.ViewModels
 {
     internal class ViewModelLocator
     {
-        private DeviceCenterViewModel _deviceCenterViewModel;
-        public DeviceCenterViewModel DeviceCenterViewModel => _deviceCenterViewModel;
+        private readonly IContainer _container;
 
-        private MainWindowViewModel _mainWindowViewModel;
-        public MainWindowViewModel MainWindowViewModel => _mainWindowViewModel;
-
-        private LaserViewModel _laserViewModel;
-        public LaserViewModel LaserViewModel => _laserViewModel;
+        public DeviceCenterViewModel DeviceCenterViewModel => _container.GetInstance<DeviceCenterViewModel>();
+        public MainWindowViewModel MainWindowViewModel => _container.GetInstance<MainWindowViewModel>();
+        public LaserViewModel LaserViewModel => _container.GetInstance<LaserViewModel>();
 
         public ViewModelLocator()
         {
-            var deviceManager = new DeviceManager();
-            _laserViewModel = new LaserViewModel();
-            _deviceCenterViewModel = new DeviceCenterViewModel(
-                deviceManager, 
-                new DialogService(),
-                _laserViewModel);
-
-            _mainWindowViewModel = new MainWindowViewModel();
+            _container = new Container(c =>
+            {
+                c.AddRegistry(new CommonRegistry());
+            });
         }
     }
 }

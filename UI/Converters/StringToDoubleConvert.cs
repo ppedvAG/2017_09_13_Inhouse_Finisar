@@ -12,7 +12,10 @@ namespace UI.Converters
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            return double.Parse((string)value);
+            if (double.TryParse((string)value, out var result))
+                return result;
+
+            return 0;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
