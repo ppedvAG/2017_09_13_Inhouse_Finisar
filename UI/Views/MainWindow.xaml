@@ -1,51 +1,61 @@
 ﻿<Window x:Class="UI.Views.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:vm="clr-namespace:UI.ViewModels"
-        xmlns:local="clr-namespace:UI"
+        xmlns:local="clr-namespace:UI.Views"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Window.DataContext>
-        <vm:MainWindowViewModel />
-    </Window.DataContext>
-
-    <Window.InputBindings>
-        <KeyBinding Key="C" Modifiers="Ctrl+Alt+Shift"
+        Title="MainWindow" Height="350" Width="525"
+        DataContext="{Binding Source={StaticResource Locator}, Path=MainWindowViewModel}">
+    <Grid>
+        <Grid.RowDefinitions >
+            <RowDefinition Height="3*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        
+        <local:DeviceCenterView Grid.Row="0" />
+        <local:LaserView  Grid.Row="1" />
+    </Grid>
+</Window>
+    
+    <!-- MVVM Basics -->
+<!--
+<Window.DataContext>
+    <vm:MainWindowViewModel />
+</Window.DataContext>
+<Window.InputBindings>
+    <KeyBinding Key="C" Modifiers="Ctrl+Alt+Shift"
                     Command="{Binding ChangeTextCommand}" />
-    </Window.InputBindings>
+</Window.InputBindings>
 
-    <StackPanel Margin="50">
-        <Menu>
-            <MenuItem Header="Datei">
-                <MenuItem Header="Change Text" Command="{Binding ChangeTextCommand}" />
-            </MenuItem>
-        </Menu>
+<StackPanel Margin="50">
+    <Menu>
+        <MenuItem Header="Datei">
+            <MenuItem Header="Change Text" Command="{Binding ChangeTextCommand}" />
+        </MenuItem>
+    </Menu>
 
-        <TextBlock HorizontalAlignment="Center"
+    <TextBlock HorizontalAlignment="Center"
                    Text="{Binding WelcomeText}"
                    Foreground="Blue"
                    FontWeight="Bold" FontSize="32"/>
 
-        <TextBox Text="{Binding WelcomeText, UpdateSourceTrigger=PropertyChanged}"
+    <TextBox Text="{Binding WelcomeText, UpdateSourceTrigger=PropertyChanged}"
                  HorizontalContentAlignment="Center"
                  Margin="0 20 0 0">
-        </TextBox>
+    </TextBox>
 
-        <Button Content="Change Text"
+    <Button Content="Change Text"
                 Margin="0 20 0 0"
                 Command="{Binding ChangeTextCommand}"/>
 
-        <Button Content="Change Text"
+    <Button Content="Change Text"
                 Margin="0 20 0 0"
                 Command="{Binding ChangeTextCommand}"/>
 
-    </StackPanel>
-    
-</Window>
-    
-    
+</StackPanel>-->
+
+<!-- WPF Basics -->
 <!--
 <Window.Resources>
         <Style TargetType="CheckBox">

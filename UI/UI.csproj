@@ -54,7 +54,21 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="ViewModels\RelayCommand.cs" />
+    <Compile Include="Converters\StringToDoubleConvert.cs" />
+    <Compile Include="ObservableModels\ObservableDevice.cs" />
+    <Compile Include="ObservableModels\ObservableLaser.cs" />
+    <Compile Include="Services\DialogService.cs" />
+    <Compile Include="Services\IDialogService.cs" />
+    <Compile Include="ViewModels\DeviceCenterViewModel.cs" />
+    <Compile Include="Infrastructure\RelayCommand.cs" />
+    <Page Include="Views\DeviceCenterView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\LaserView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -63,8 +77,16 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="ViewModels\LaserViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
-    <Compile Include="ViewModels\ViewModelBase.cs" />
+    <Compile Include="Infrastructure\BindableObject.cs" />
+    <Compile Include="ViewModels\ViewModelLocator.cs" />
+    <Compile Include="Views\DeviceCenterView.xaml.cs">
+      <DependentUpon>DeviceCenterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LaserView.xaml.cs">
+      <DependentUpon>LaserView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -96,6 +118,15 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Core\Core.csproj">
+      <Project>{DD3BAECC-9EE2-4E9E-A340-983A3CEEED2F}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Hardware.Simulate\Hardware.Simulate.csproj">
+      <Project>{eee8374e-0200-46da-baf2-555782c9181a}</Project>
+      <Name>Hardware.Simulate</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

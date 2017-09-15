@@ -1,8 +1,9 @@
 ﻿using System.Windows.Input;
+using UI.Infrastructure;
 
 namespace UI.ViewModels
 {
-    internal class MainWindowViewModel : ViewModelBase
+    internal class MainWindowViewModel : BindableObject
     {
         private string _welcomeText = "Hallo MVVM";
         public string WelcomeText

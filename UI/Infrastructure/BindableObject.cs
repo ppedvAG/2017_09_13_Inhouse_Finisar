@@ -1,9 +1,9 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace UI.ViewModels
+namespace UI.Infrastructure
 {
-    public abstract class ViewModelBase : INotifyPropertyChanged
+    public abstract class BindableObject : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
